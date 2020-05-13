@@ -13,6 +13,7 @@
     <script src="https://kit.fontawesome.com/b20e5faf37.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../assets/css/style.css" />
     <script src="../../assets/js/script.js"></script>
+    <link rel="icon" href="../../assets/img/logo.png" />
 </head>
 
 <body>

@@ -18,6 +18,14 @@
 
 ##### Items: `{\_id: ObjectId, item_id:String, item_desc:String, item_qty:Number}`
 
+#### Access Levels:
+
+##### 0 - Guest
+
+##### 1 - User
+
+##### 2 - Admin
+
 #### Setup:
 
 - Create new folder.

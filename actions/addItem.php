@@ -17,7 +17,11 @@
         $bulk->insert($item);
         $db = new MongoDB\Driver\Manager('mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/phpmongo');
         $res = $db->executeBulkWrite('phpmongo.items', $bulk);
-        header('Location: ../pages/admin/');
+        if($_SESSION["access_level"]==2){
+            header('Location: ../pages/admin/');
+        } else {
+            header('Location: ../pages/user/');
+        }
     } catch(MongoDB\Driver\Exception\Exception $e){
         die('Error Encountered: '.$e);
     }

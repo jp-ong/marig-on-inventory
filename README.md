@@ -18,9 +18,9 @@
 
 - Collections: _users_, _items_
 
-- Users: `{\_id: ObjectId, username:String, password:String, access_level:Number}`
+- Users: `{_id: ObjectId, username:String, password:String, access_level:Number}`
 
-- Items: `{\_id: ObjectId, item_id:String, item_desc:String, item_qty:Number}`
+- Items: `{_id: ObjectId, item_id:String, item_desc:String, item_qty:Number}`
 
 ---
 
@@ -34,12 +34,12 @@
 
 #### Setup:
 
-- Create new folder.
-- Open VSCode in new folder
-- Open new terminal
-- `git clone https://github.com/jp-ong/marig-on-inventory .`
-- `composer install`
-- Set-up finished!
+1. Create new folder.
+2. Open VSCode in new folder
+3. Open new terminal
+4. `git clone https://github.com/jp-ong/marig-on-inventory .`
+5. `composer install`
+6. Set-up finished!
 
 ---
 

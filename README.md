@@ -35,7 +35,7 @@
 #### Setup:
 
 1. Create new folder.
-2. Open VSCode in new folder
+2. Open VSCode in created folder
 3. Open new terminal
 4. `git clone https://github.com/jp-ong/marig-on-inventory .`
 5. `composer install`

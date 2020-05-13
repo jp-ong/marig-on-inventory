@@ -1,8 +1,8 @@
 {
-    "name": "japlong/inventory-system",
-    "description": "MARIG-ON INVENTORY",
-    "license": "UNLICENSED",
-    "require": {
-        "mongodb/mongodb": "^1.6"
-    }
+  "name": "marig-on-inventory-system",
+  "description": "MARIG-ON INVENTORY",
+  "license": "UNLICENSED",
+  "require": {
+    "mongodb/mongodb": "^1.6"
+  }
 }

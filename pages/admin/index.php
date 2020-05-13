@@ -1,4 +1,8 @@
-<?php session_start()?>
+<?php 
+    session_start();
+    if(!isset($_SESSION["loggedin"])||$_SESSION["loggedin"]==false||$_SESSION["access_level"]!=2){
+        header("Location: ../../");}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +19,7 @@
     <nav>
         <div class="nav-left">
             <div class="brand-container">
-                <a href="#">
+                <a href="">
                     <span class="brand-prm">MARIG-ON</span>
                     <span class="brand-sec">Inventory</span>
                 </a>
@@ -23,15 +27,19 @@
         </div>
         <div class="nav-right">
             <div class="user-container">
-                <div class="user-details"><span class="user-label">Username:</span><span
-                        class="user-text">JohnPaul</span></div>
-                <div class="user-details"><span class="user-label">Access Level:</span><span
-                        class="user-text">Admin</span></div>
+                <div class="user-details"><span class="user-label">Username:</span>
+                    <span class="user-text"><?php echo $_SESSION["username"];?></span>
+                </div>
+                <div class="user-details">
+                    <span class="user-label">Access Level:</span>
+                    <span class="user-text"><?php echo $_SESSION["access_level"];?></span>
+                </div>
             </div>
             <div class="logout-button-container">
                 <button class="logout-button" onClick='signout()'>Logout</button>
             </div>
         </div>
+        <a class="back-button" href="../about/">View Team</a>
     </nav>
 
 

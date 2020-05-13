@@ -3,28 +3,39 @@
     $username = $_POST["username"];
     $password = $_POST["password"];
     
-    $db = new MongoDB\Driver\Manager("mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/");
+    $db = new MongoDB\Driver\Manager("mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/phpmongo");
     $query = new MongoDB\Driver\Query([]);
     $users = $db->executeQuery("phpmongo.users", $query);
 
     foreach($users as $user){
         if($username === $user->username && $password === $user->password){
-            switch($user->user_type){
+            
+            switch($user->access_level){
+                case 0:{
+                    $_SESSION["loggedin"] = true;
+                    $_SESSION["username"] = $user->username;
+                    $_SESSION["access_level"] = $user->access_level;
+                    header("Location: ../pages/guest/");break;
+                }
                 case 1:{
-                    $_SESSION["loggedin"] = 1;
-                    //header(Guest)
+                    $_SESSION["loggedin"] = true;
+                    $_SESSION["username"] = $user->username;
+                    $_SESSION["access_level"] = $user->access_level;
+                    header("Location: ../pages/user/");break;
                 }
                 case 2:{
-                    $_SESSION["loggedin"] = 2;
-                    //header(User)
+                    $_SESSION["loggedin"] = true;
+                    $_SESSION["username"] = $user->username;
+                    $_SESSION["access_level"] = $user->access_level;
+                    header("Location: ../pages/admin/");break;
                 }
-                case 3:{
-                    $_SESSION["loggedin"] = 3;
-                    //header(admin)
+                default:{
+                $_SESSION["loggedin"] = false;
+                header("Location: ../");break;
                 }
-            }
+            } break;
         } else {
-            $_SESSION["loggedin"] = 0;
+            $_SESSION["loggedin"] = -1;
             header("Location: ../");
         }
     }

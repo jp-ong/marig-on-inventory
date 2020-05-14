@@ -366,6 +366,7 @@ a {
   border: 1px solid #777;
   border-radius: 100rem;
   transition: 200ms;
+  cursor: pointer;
 }
 .add-button:hover {
   filter: brightness(2);

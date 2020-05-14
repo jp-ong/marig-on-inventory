@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if($_SESSION["access_level"]!=1&&$_SESSION["access_level"]!=2){
+        header('Location: ../../');
+    }
     //Gets _id of item from POST form
     $bulk = new MongoDB\Driver\BulkWrite;
     $id = $_GET["id"];

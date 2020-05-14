@@ -1,4 +1,5 @@
 <?php
+/* For every start of the system, it must be called first which user has been validated and shown at the top of the header page. */
     session_start();
     if((!isset($_SESSION["loggedin"])||$_SESSION["loggedin"]==false)||($_SESSION["access_level"]!=1&&$_SESSION["access_level"]!=2)){
         header('Location: ../../');

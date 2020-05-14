@@ -32,19 +32,18 @@
 
 ---
 
-#### Setup:
+#### Setup _(for devs)_:
 
 1. Create new folder.
-2. Open VSCode in created folder
-3. Open new terminal
-4. `git clone https://github.com/jp-ong/marig-on-inventory .`
-5. `composer install`
+2. Open VSCode in created folder.
+3. Open new terminal.
+4. `git clone https://github.com/jp-ong/marig-on-inventory .` **or** download manually.
+5. `composer install` on your terminal. _Optional_
 6. Set-up finished!
+7. Run with xampp on your machine. _Optional_
 
 ---
 
 #### Todos:
-
-- Make guest page
 
 ---

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION["access_level"]!=1&&$_SESSION["access_level"]!=2){
+    if((!isset($_SESSION["loggedin"])||$_SESSION["loggedin"]==false)||($_SESSION["access_level"]!=1&&$_SESSION["access_level"]!=2)){
         header('Location: ../../');
     }
     //Gets new item details from POST form

@@ -35,7 +35,7 @@
                 }
             } break;
         } else {
-            $_SESSION["loggedin"] = -1;
+            $_SESSION["loggedin"] = false;
             header("Location: ../");
         }
     }

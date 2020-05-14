@@ -366,7 +366,6 @@ a {
   border: 1px solid #777;
   border-radius: 100rem;
   transition: 200ms;
-  cursor: pointer;
 }
 .add-button:hover {
   filter: brightness(2);
@@ -445,4 +444,36 @@ a {
 
 .back-button:hover {
   opacity: 1;
+}
+
+/* This would ideally be functioning for mobile phones.
+FOR FUTURE RENDITIONS: Tablet View
+These only adjusts nav and table css properties to properly display the data */
+@media (max-width: 500px) {
+  .table-container {
+    width: 90%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .brand-container {
+    margin-top: 30px;
+    position: inherit;
+  }
+  .table-row {
+    height: 1rem;
+  }
+  .nav-left {
+    position: absolute;
+    bottom: 120px;
+    left: -30px;
+  }
+  .nav-right {
+    position: absolute;
+    left: 230px;
+  }
+  .nav-right .logout-button-container {
+    position: absolute;
+    left: 10px;
+    top: 85px;
+  }
 }

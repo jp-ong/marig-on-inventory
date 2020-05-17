@@ -8,16 +8,26 @@
     $bulk = new MongoDB\Driver\BulkWrite();
     $id = $_POST["id"];
     $itemid = $_POST["edit-id"];
-    $description = $_POST["edit-description"];
+    $name = $_POST["edit-name"];
+    $series = $_POST["edit-series"];
     $quantity = $_POST["edit-quantity"];
+    $trend = $_POST["edit-trend"];
+    $created = $_POST["created-at"];
+    $username = $_SESSION['username'];
+    date_default_timezone_set('Asia/Taipei');
 
     //Updates item detail using _id as query
     try{
         $bulk->update(['_id' => new MongoDB\BSON\ObjectId($id)],
         [
             'item_id' => $itemid,
-            'item_desc' => $description,
+            'item_name' => $name,
+            'item_series' => $series,
             'item_qty' => $quantity,
+            'trend_val' => $trend,
+            'createdAt' => $created,
+            'updatedAt' => date('d/m/Y h:i', time()),
+            'updatedBy' => $username
         ]);
         $db = new MongoDB\Driver\Manager('mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/phpmongo');
         $res = $db->executeBulkWrite('phpmongo.items', $bulk);

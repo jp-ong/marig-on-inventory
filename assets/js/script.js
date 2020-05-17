@@ -2,16 +2,30 @@ const signout = () => {
   window.location.href = "../../";
 };
 
-const modifyItem = (id, item_id, item_desc, item_qty) => {
+const modifyItem = (
+  id,
+  item_id,
+  item_name,
+  item_series,
+  item_qty,
+  trend_val,
+  created_at
+) => {
   const idInput = document.getElementById("id");
+  const createdAt = document.getElementById("created-at");
   const itemInput = document.getElementById("edit-id");
-  const descInput = document.getElementById("edit-description");
+  const nameInput = document.getElementById("edit-name");
+  const seriesInput = document.getElementById("edit-series");
   const qtyInput = document.getElementById("edit-quantity");
+  const trendInput = document.getElementById("edit-trend");
 
   idInput.value = id;
+  createdAt.value = created_at;
   itemInput.value = item_id;
-  descInput.value = item_desc;
+  nameInput.value = item_name;
+  seriesInput.value = item_series;
   qtyInput.value = item_qty;
+  trendInput.value = trend_val;
 
   openModifyModal();
 };

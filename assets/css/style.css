@@ -173,7 +173,7 @@ a {
 .table-container {
   position: relative;
   background-color: #09080a;
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
   padding-bottom: 1rem;
   border: 1px solid #303030;
@@ -194,6 +194,7 @@ a {
   font-family: monospace;
   font-size: 1vmax;
   font-weight: bold;
+  padding: 0 0.5rem;
   width: 100%;
   text-align: center;
 }
@@ -221,6 +222,7 @@ a {
   width: 100%;
   height: 1.75rem;
   margin-top: 0.2rem;
+  padding: 0 0.5rem;
   padding-bottom: 0.2rem;
   display: flex;
   align-items: flex-end;
@@ -228,6 +230,8 @@ a {
   font-family: monospace;
   font-size: 1.1rem;
   border-bottom: 1px solid #303030;
+  border-left: 1px solid #303030;
+  border-right: 1px solid #303030;
   overflow-x: hidden;
   transition: 200ms;
 }
@@ -235,16 +239,16 @@ a {
   border-bottom: 1px solid #eee;
 }
 
-.col-id {
-  color: #66fcf1;
+.col-group-2 {
+  width: 60%;
 }
-
-.col-des {
-  color: #ffe400;
+.col-group-1-data {
+  color: #8edafd;
 }
-
-.col-qty {
+.col-group-2-data {
   color: #15db95;
+  width: 60%;
+  font-size: small;
 }
 
 .modify-button {

@@ -45,10 +45,15 @@
 
     <div class="table-container">
         <div class="table-header-row">
-            <div class="table-header-col">ID</div>
-            <div class="table-header-col">Description</div>
-            <div class="table-header-col">Quantity</div>
-            <div class="table-header-col">Actions</div>
+            <div class="table-header-col col-group-1">ID</div>
+            <div class="table-header-col col-group-1">Name</div>
+            <div class="table-header-col col-group-1">Series</div>
+            <div class="table-header-col col-group-1">Quantity</div>
+            <div class="table-header-col col-group-2">Trend</div>
+            <div class="table-header-col col-group-2">Created At</div>
+            <div class="table-header-col col-group-2">Updated At</div>
+            <div class="table-header-col col-group-2">Updated By</div>
+            <div class="table-header-col col-group-1">Actions</div>
         </div>
         <div class="table-body">
             <?php
@@ -57,11 +62,16 @@
                 $rows = $db->executeQuery("phpmongo.items", $query);
                 foreach($rows as $row){
                     echo "<div class='table-row'>";
-                    echo "<div class='table-col col-id'>$row->item_id</div>";
-                    echo "<div class='table-col col-des'>$row->item_desc</div>";
-                    echo "<div class='table-col col-qty'>$row->item_qty</div>";
-                    echo "<div class='table-col col-act'>
-                    <button class='modify-button' onClick='modifyItem(\"$row->_id\",\"$row->item_id\",\"$row->item_desc\",\"$row->item_qty\")'>Modify</button>
+                    echo "<div class='table-col col-group-1-data'>$row->item_id</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_name</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_series</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_qty</div>";
+                    echo "<div class='table-col col-group-2-data'>$row->trend_val</div>";
+                    echo "<div class='table-col col-group-2-data'>$row->createdAt</div>";
+                    echo "<div class='table-col col-group-2-data'>$row->updatedAt</div>";
+                    echo "<div class='table-col col-group-2-data'>$row->updatedBy</div>";
+                    echo "<div class='table-col col-group-1'>
+                    <button class='modify-button' onClick='modifyItem(\"$row->_id\",\"$row->item_id\",\"$row->item_name\",\"$row->item_series\",\"$row->item_qty\",\"$row->trend_val\",\"$row->createdAt\")'>Modify</button>
                     <button class='delete-button' onClick='deleteItem(\"$row->_id\")'>Delete</button></div>";
                     echo "</div>";
                 };
@@ -73,9 +83,11 @@
         <div class="modal-header">NEW ITEM</div>
         <form method="POST" action="../../actions/addItem.php">
             <div class="modal-body">
-                <input type="text" placeholder="Item ID" name="new-id" id="new-id">
-                <input type="text" placeholder="Item Description" name="new-description" id="new-description">
-                <input type="number" placeholder="Item Quantity" name="new-quantity" id="new-quantity">
+                <input type="text" placeholder="ID" name="new-id" id="new-id">
+                <input type="text" placeholder="Name" name="new-name" id="new-name">
+                <input type="text" placeholder="Series" name="new-series" id="new-series">
+                <input type="number" placeholder="Quantity" name="new-quantity" id="new-quantity">
+                <input type="text" placeholder="Trend" name="new-trend" id="new-trend">
             </div>
             <div class="modal-footer">
                 <button class="save-button" type="submit">Add</button>
@@ -88,9 +100,12 @@
         <form method="POST" action="../../actions/modifyItem.php">
             <div class="modal-body">
                 <input type="hidden" name="id" id="id">
-                <input type="text" placeholder="Item ID" name="edit-id" id="edit-id">
-                <input type="text" placeholder="Item Description" name="edit-description" id="edit-description">
-                <input type="number" placeholder="Item Quantity" name="edit-quantity" id="edit-quantity">
+                <input type="hidden" name="created-at" id="created-at">
+                <input type="text" placeholder="ID" name="edit-id" id="edit-id">
+                <input type="text" placeholder="Name" name="edit-name" id="edit-name">
+                <input type="text" placeholder="Series" name="edit-series" id="edit-series">
+                <input type="number" placeholder="Quantity" name="edit-quantity" id="edit-quantity">
+                <input type="text" placeholder="Trend" name="edit-trend" id="edit-trend">
             </div>
             <div class="modal-footer">
                 <button class="save-button" type="submit">Save</button>

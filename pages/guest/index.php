@@ -46,8 +46,8 @@
     <div class="table-container">
         <div class="table-header-row">
             <div class="table-header-col">ID</div>
-            <div class="table-header-col">Description</div>
-            <div class="table-header-col">Quantity</div>
+            <div class="table-header-col">Name</div>
+            <div class="table-header-col">Series</div>
         </div>
         <div class="table-body">
             <?php
@@ -56,9 +56,9 @@
                 $rows = $db->executeQuery("phpmongo.items", $query);
                 foreach($rows as $row){
                     echo "<div class='table-row'>";
-                    echo "<div class='table-col col-id'>$row->item_id</div>";
-                    echo "<div class='table-col col-des'>$row->item_desc</div>";
-                    echo "<div class='table-col col-qty'>$row->item_qty</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_id</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_name</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_series</div>";
                     echo "</div>";
                 };
             ?>

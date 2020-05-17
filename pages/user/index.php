@@ -46,7 +46,8 @@
     <div class="table-container">
         <div class="table-header-row">
             <div class="table-header-col">ID</div>
-            <div class="table-header-col">Description</div>
+            <div class="table-header-col">Name</div>
+            <div class="table-header-col">Series</div>
             <div class="table-header-col">Quantity</div>
         </div>
         <div class="table-body">
@@ -56,9 +57,10 @@
                 $rows = $db->executeQuery("phpmongo.items", $query);
                 foreach($rows as $row){
                     echo "<div class='table-row'>";
-                    echo "<div class='table-col col-id'>$row->item_id</div>";
-                    echo "<div class='table-col col-des'>$row->item_desc</div>";
-                    echo "<div class='table-col col-qty'>$row->item_qty</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_id</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_name</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_series</div>";
+                    echo "<div class='table-col col-group-1-data'>$row->item_qty</div>";
                     echo "</div>";
                 };
             ?>
@@ -69,9 +71,10 @@
         <div class="modal-header">NEW ITEM</div>
         <form method="POST" action="../../actions/addItem.php">
             <div class="modal-body">
-                <input type="text" placeholder="Item ID" name="new-id" id="new-id">
-                <input type="text" placeholder="Item Description" name="new-description" id="new-description">
-                <input type="number" placeholder="Item Quantity" name="new-quantity" id="new-quantity">
+                <input type="text" placeholder="ID" name="new-id" id="new-id">
+                <input type="text" placeholder="Name" name="new-name" id="new-name">
+                <input type="text" placeholder="Series" name="new-series" id="new-series">
+                <input type="number" placeholder="Quantity" name="new-quantity" id="new-quantity">
             </div>
             <div class="modal-footer">
                 <button class="save-button" type="submit">Add</button>

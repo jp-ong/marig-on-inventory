@@ -18,17 +18,17 @@
 
 - Collections: _users_, _items_
 
-- Users: `{_id: ObjectId, username:String, password:String, access_level:Number}`
+- Users: `{_id: ObjectId, username:String, password:String, access_level:Number, createdAt:Date}`
 
-- Items: `{_id: ObjectId, item_id:String, item_desc:String, item_qty:Number}`
+- Items: `{_id: ObjectId, item_name:String, item_series:String, item_qty:Number, trend_val:String, createdAt:Date, updatedAt:Date, updatedBy:String}`
 
 ---
 
 #### Access Levels:
 
-- 0 - _Guest_
-- 1 - _User_
-- 2 - _Admin_
+- 0 - _Guest_ **View(ID, Name, Series)**
+- 1 - _User_ **View(ID, Name, Series, Quantity), Add**
+- 2 - _Admin_ **View(ID, Name, Series, Quantity, Trend, Created At, Updated At, Updated By,), Add, Modify, Delete**
 
 ---
 

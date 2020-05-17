@@ -43,7 +43,7 @@
                     <button class="login-button" type="submit">LOGIN</button>
                 </div>
             </form>
-            <?php if(isset($_SESSION['loggedin'])&&$_SESSION['loggedin']===-1) 
+            <?php if(isset($_SESSION['loggedin'])&&$_SESSION['loggedin']===false) 
         echo '<div class="login-feedback">Invalid username or password.</div>'?>
         </div>
     </div>

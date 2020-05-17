@@ -26,9 +26,9 @@
 
 #### Access Levels:
 
-- 0 - _Guest_ **View(_ID, Name, Series_)**
-- 1 - _User_ **View(_ID, Name, Series, Quantity_), Add**
-- 2 - _Admin_ **View(_ID, Name, Series, Quantity, Trend, Created At, Updated At, Updated By, Actions_), Add, Modify, Delete**
+- 0 - _Guest_ **View**(_ID, Name, Series_)
+- 1 - _User_ **View**(_ID, Name, Series, Quantity_)**, Add**
+- 2 - _Admin_ **View**(_ID, Name, Series, Quantity, Trend, Created At, Updated At, Updated By, Actions_)**, Add, Modify, Delete**
 
 ---
 

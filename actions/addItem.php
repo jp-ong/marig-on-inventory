@@ -28,7 +28,7 @@
     //Appends item details to Items Collection in MongoDB
     try{
         $bulk->insert($item);
-        $db = new MongoDB\Driver\Manager('mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/phpmongo');
+        include('../config/connect.php');
         $res = $db->executeBulkWrite('phpmongo.items', $bulk);
         if($_SESSION["access_level"]==2){
             header('Location: ../pages/admin/');

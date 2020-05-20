@@ -7,7 +7,7 @@ and gain access to the inventory system.
     $username = $_POST["username"];
     $password = $_POST["password"];
     
-    $db = new MongoDB\Driver\Manager("mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/phpmongo");
+    include('../config/connect.php');
     $query = new MongoDB\Driver\Query([]);
     $users = $db->executeQuery("phpmongo.users", $query);
 

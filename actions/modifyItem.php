@@ -29,7 +29,8 @@
             'updatedAt' => date('d/m/Y h:i', time()),
             'updatedBy' => $username
         ]);
-        $db = new MongoDB\Driver\Manager('mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/phpmongo');
+        
+        include('../config/connect.php');
         $res = $db->executeBulkWrite('phpmongo.items', $bulk);
         header('Location: ../pages/admin/');
     } catch(MongoDB\Driver\Exception\Exception $e){

@@ -57,7 +57,7 @@
         </div>
         <div class="table-body">
             <?php
-                $db = new MongoDB\Driver\Manager("mongodb+srv://phpmongoAdmin:phpmongoAdmin1234@ong-cluster-smaha.mongodb.net/phpmongo");
+                include('../../config/connect.php');
                 $query = new MongoDB\Driver\Query([]);
                 $rows = $db->executeQuery("phpmongo.items", $query);
                 foreach($rows as $row){
